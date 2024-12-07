@@ -5,10 +5,20 @@ const initialState = {
     isAdmin: false,
     user: null,
 }
+const authReducer = (state, action) => {
+    switch (action.type) {
+        case "signin":
+            return {
+                ...state,
+                isAdmin: true,
+                user: action.payload,
+            }}
+        }
  
 
 function AuthApp() {
     const [state, dispatch] = useReducer(authReducer, initialState)
+    
    
  
     const handleSignIn = () => {
